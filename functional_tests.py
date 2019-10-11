@@ -19,7 +19,17 @@ class NewVisitorTest(unittest.TestCase):
 
         # They see an image showcasing my artwork
 
-        # Directly underneath the image is my name
+        # Directly underneath the image they can see my name
+
+        # Directly underneath my name they can see two dropdowns: "Artist" and "Software Engineer"
+
+        # The "Artist" dropdown shows a link to my gallery
+
+        # The "Software Engineer" dropdown shows a link to my github
+
+        # Underneath the dropdowns you can see a few links to social media accounts
+
+        # Underneath the social media links you can see "Contact Me: v.like.wiktoria@gmail.com"
 
 
 if __name__ == '__main__':
