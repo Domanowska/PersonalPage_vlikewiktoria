@@ -14,12 +14,16 @@ class NewVisitorTest(unittest.TestCase):
         # so they decide to check it out and visit my homepage
         self.browser.get('http://localhost:8000')
 
-        # They notice that my page title and header features my handle: v.like.wiktoria
+        # They notice that my page title features my handle: v.like.wiktoria
         self.assertIn('v.like.wiktoria', self.browser.title)
 
         # They see an image showcasing my artwork
+        showcase_image = self.browser.find_element_by_tag_name('img')
+        self.assertNotEqual(showcase_image.get_attribute("naturalWidth"), '0')
 
         # Directly underneath the image they can see my name
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('Wiktoria Domanowska', header_text)
 
         # Directly underneath my name they can see two dropdowns: "Artist" and "Software Engineer"
 
