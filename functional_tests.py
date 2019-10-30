@@ -25,11 +25,13 @@ class NewVisitorTest(unittest.TestCase):
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Wiktoria Domanowska', header_text)
 
-        # Directly underneath my name they can see two dropdowns: "Artist" and "Software Engineer"
+        # Directly underneath my name they can see two buttons: "Artist" and "Software Engineer"
+        artist_dropdown = self.browser.find_element_by_class_name('dropdown').text
+        self.assertIn('Artist', artist_dropdown)
 
-        # The "Artist" dropdown shows a link to my gallery
+        # The "Artist" button has a dropdown that shows a link to my gallery
 
-        # The "Software Engineer" dropdown shows a link to my github
+        # The "Software Engineer" button has a dropdown that shows a link to my github
 
         # Underneath the dropdowns you can see a few links to social media accounts
 
