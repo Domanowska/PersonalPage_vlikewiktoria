@@ -1,10 +1,28 @@
 <html>
     <head>
+        <style>
+            .dropdown {position: relative; display: inline-block;}
+            .dropdown-btn {background-color: #ffffff; border: none;}
+            .dropdown-content {display: none; position: absolute;}
+            .dropdown:hover .dropdown-content {display: block;}
+        </style>
         <title>v.like.wiktoria</title>
     </head>
     <body>
         {% load static %}
         <img src="{% static "/images/featured.png" %}">
         <h1>Wiktoria Domanowska</h1>
+        <div class="dropdown" id="artist_drpdn">
+            <button class="dropdown-btn">Artist</button>
+            <div class="dropdown-content">
+                <a href="#">Portfolio</a>
+            </div>
+        </div>
+        <div class="dropdown" id="sfteng_drpdn">
+            <button class="dropdown-btn">Software Engineer</button>
+            <div class="dropdown-content">
+                <a href="#">GitHub</a>
+            </div>
+        </div>
     </body>
 </html>

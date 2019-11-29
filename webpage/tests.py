@@ -2,7 +2,6 @@ from django.test import TestCase
 from django.urls import resolve
 from django.http import HttpRequest
 from django.contrib.staticfiles import finders
-from django.contrib.staticfiles.storage import staticfiles_storage
 
 from webpage.views import home_page
 
@@ -24,5 +23,7 @@ class HomePageTest(TestCase):
         self.assertIn('<img', html)
         image_loc = finders.find('images/featured.png')
         self.assertIsNotNone(image_loc)
+
+
 
 

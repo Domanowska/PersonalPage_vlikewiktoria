@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
 import unittest
 
 class NewVisitorTest(unittest.TestCase):
@@ -25,13 +27,29 @@ class NewVisitorTest(unittest.TestCase):
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Wiktoria Domanowska', header_text)
 
-        # Directly underneath my name they can see two buttons: "Artist" and "Software Engineer"
-        artist_dropdown = self.browser.find_element_by_class_name('dropdown').text
-        self.assertIn('Artist', artist_dropdown)
+    def test_can_see_artist_links(self):
+        # Directly underneath my name they can see an "Artist" button
+        # Hovering over the "Artist" button shows a dropdown of different galleries
+        self.browser.get('http://localhost:8000')
 
-        # The "Artist" button has a dropdown that shows a link to my gallery
+        artist_dropdown = self.browser.find_element_by_id('artist_drpdn')
+        self.assertIn('Artist', artist_dropdown.text)
 
+        ActionChains(self.browser).move_to_element(artist_dropdown).perform()
+        gallery_link = self.browser.find_element_by_xpath('//html/body/div[1]/div[1]/a[1]').text
+        self.assertIn('Portfolio', gallery_link)
+
+    def test_can_see_engineer_links(self):
+        # Directly underneath my name they can see an "Software Engineer" button
         # The "Software Engineer" button has a dropdown that shows a link to my github
+        self.browser.get('http://localhost:8000')
+
+        sfteng_dropdown = self.browser.find_element_by_id('sfteng_drpdn')
+        self.assertIn('Software Engineer', sfteng_dropdown.text)
+
+        ActionChains(self.browser).move_to_element(sfteng_dropdown).perform()
+        github_link = self.browser.find_element_by_xpath('//html/body/div[2]/div[1]/a[1]').text
+        self.assertIn('GitHub', github_link)
 
         # Underneath the dropdowns you can see a few links to social media accounts
 
