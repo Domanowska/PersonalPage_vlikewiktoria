@@ -5,24 +5,30 @@
             .dropdown-btn {background-color: #ffffff; border: none;}
             .dropdown-content {display: none; position: absolute;}
             .dropdown:hover .dropdown-content {display: block;}
+            .sm_links {padding-top: 25px;}
         </style>
         <title>v.like.wiktoria</title>
     </head>
     <body>
         {% load static %}
-        <img src="{% static "/images/featured.png" %}">
+        <img src="{% static "/images/profile/featured.png" %}">
         <h1>Wiktoria Domanowska</h1>
         <div class="dropdown" id="artist_drpdn">
             <button class="dropdown-btn">Artist</button>
             <div class="dropdown-content">
-                <a href="#">Portfolio</a>
+                <a href="http://localhost:8000/gallery">Portfolio</a>
             </div>
         </div>
         <div class="dropdown" id="sfteng_drpdn">
             <button class="dropdown-btn">Software Engineer</button>
             <div class="dropdown-content">
-                <a href="#">GitHub</a>
+                <a href="#">Blog</a>
             </div>
+        </div>
+        <div class="sm_links">
+            <a href="https://www.instagram.com/v.like.wiktoria/">Instagram</a>
+            <a href="">DeviantArt</a>
+            <a href="https://github.com/Domanowska">GitHub</a>
         </div>
     </body>
 </html>

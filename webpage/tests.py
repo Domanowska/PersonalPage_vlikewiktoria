@@ -3,7 +3,7 @@ from django.urls import resolve
 from django.http import HttpRequest
 from django.contrib.staticfiles import finders
 
-from webpage.views import home_page
+from webpage.views import home_page, gallery_page
 
 class HomePageTest(TestCase):
 
@@ -23,6 +23,15 @@ class HomePageTest(TestCase):
         self.assertIn('<img', html)
         image_loc = finders.find('images/featured.png')
         self.assertIsNotNone(image_loc)
+
+    def test_gallery_link_resolves_to_gallery_view(self):
+        found = resolve('/gallery/')
+        self.assertEqual(found.func, gallery_page)
+
+    def test_gallery_page_returns_correct_html(self):
+        response = self.client.get('/gallery/')
+        self.assertTemplateUsed(response, 'gallery.html')
+
 
 
 

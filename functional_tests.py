@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
 import unittest
 
 class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome()
+        self.browser.get('http://localhost:8000')
 
     def tearDown(self):
         self.browser.quit()
@@ -14,8 +14,6 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_see_picture_and_name(self):
         # I've told someone about my personal web page I built myself
         # so they decide to check it out and visit my homepage
-        self.browser.get('http://localhost:8000')
-
         # They notice that my page title features my handle: v.like.wiktoria
         self.assertIn('v.like.wiktoria', self.browser.title)
 
@@ -27,29 +25,27 @@ class NewVisitorTest(unittest.TestCase):
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Wiktoria Domanowska', header_text)
 
-    def test_can_see_artist_links(self):
+    def test_can_visit_artist_links(self):
         # Directly underneath my name they can see an "Artist" button
         # Hovering over the "Artist" button shows a dropdown of different galleries
-        self.browser.get('http://localhost:8000')
-
         artist_dropdown = self.browser.find_element_by_id('artist_drpdn')
         self.assertIn('Artist', artist_dropdown.text)
 
         ActionChains(self.browser).move_to_element(artist_dropdown).perform()
-        gallery_link = self.browser.find_element_by_xpath('//html/body/div[1]/div[1]/a[1]').text
-        self.assertIn('Portfolio', gallery_link)
+        gallery_link = self.browser.find_element_by_xpath('//html/body/div[1]/div[1]/a[1]')
+        self.assertIn('Portfolio', gallery_link.text)
+        link_text = gallery_link.get_attribute("href")
+        self.assertEqual('http://localhost:8000/gallery', link_text)
 
     def test_can_see_engineer_links(self):
         # Directly underneath my name they can see an "Software Engineer" button
         # The "Software Engineer" button has a dropdown that shows a link to my github
-        self.browser.get('http://localhost:8000')
-
         sfteng_dropdown = self.browser.find_element_by_id('sfteng_drpdn')
         self.assertIn('Software Engineer', sfteng_dropdown.text)
 
         ActionChains(self.browser).move_to_element(sfteng_dropdown).perform()
-        github_link = self.browser.find_element_by_xpath('//html/body/div[2]/div[1]/a[1]').text
-        self.assertIn('GitHub', github_link)
+        github_link = self.browser.find_element_by_xpath('//html/body/div[2]/div[1]/a[1]')
+        self.assertIn('Blog', github_link.text)
 
         # Underneath the dropdowns you can see a few links to social media accounts
 
