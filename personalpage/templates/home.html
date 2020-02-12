@@ -1,11 +1,18 @@
 <html>
     <head>
         <style>
-            .dropdown {position: relative; display: inline-block;}
-            .dropdown-btn {background-color: #ffffff; border: none;}
-            .dropdown-content {display: none; position: absolute;}
-            .dropdown:hover .dropdown-content {display: block;}
-            .sm_links {padding-top: 25px;}
+            body { background-color: #e5e6e5; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
+            img { display: block; margin-left: auto; margin-top: 150px; margin-right: auto; width: 400px;}
+            h1 { color: #8d8e8d; text-align: center;  font-weight:normal; font-size: 35px; margin-top: 5px; }
+            #navigation { margin: auto; width: 600px; text-align: center; }
+            .dropdown { position: relative; display: inline-block; margin:auto;  background-color:#1c4757; }
+            .dropdown button { background-color: #ffffff; color: #1c4757; font-size: 15px; margin: auto; width: 225px; padding-top: 5px; padding-bottom: 5px;}
+            .dropdown-btn { border: none; }
+            a { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 14px; }
+            .dropdown-content { display: none; position: absolute; background-color: #ffffff; margin: auto; width: 225px; padding-top: 5px; padding-bottom: 5px;}
+            .dropdown:hover .dropdown-content { display: block; }
+            .sm_links { margin-top: 5%; text-align: center; }
+            .sm_img { display: inline-block; margin-left: auto; margin-right: auto; height: 30px; width: 30px;}
         </style>
         <title>v.like.wiktoria</title>
     </head>
@@ -13,22 +20,27 @@
         {% load static %}
         <img src="{% static "/images/profile/featured.png" %}">
         <h1>Wiktoria Domanowska</h1>
-        <div class="dropdown" id="artist_drpdn">
-            <button class="dropdown-btn">Artist</button>
-            <div class="dropdown-content">
-                <a href="http://localhost:8000/gallery">Portfolio</a>
+        <div id="navigation" >
+            <div class="dropdown" id="artist_drpdn">
+                <button class="dropdown-btn">Artist</button>
+                <div class="dropdown-content">
+                    <a href="http://localhost:8000/gallery">Portfolio</a><br>
+                    <a href="https://society6.com/vickarious">Shop</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown" id="sfteng_drpdn">
-            <button class="dropdown-btn">Software Engineer</button>
-            <div class="dropdown-content">
-                <a href="#">Blog</a>
+            <div class="dropdown" id="sfteng_drpdn">
+                <button class="dropdown-btn">Software Engineer</button>
+                <div class="dropdown-content">
+                    <a href="https://github.com/Domanowska">GitHub</a><br>
+                    <a href="#">Blog</a>
+                </div>
             </div>
         </div>
         <div class="sm_links">
-            <a href="https://www.instagram.com/v.like.wiktoria/">Instagram</a>
-            <a href="">DeviantArt</a>
-            <a href="https://github.com/Domanowska">GitHub</a>
+            <a href="https://www.instagram.com/v.like.wiktoria/"><img class="sm_img" src="{% static "/images/social_media/instagram_allblack.png" %}"></a>
+            <a href="https://www.deviantart.com/vlikewiktoria"><img class="sm_img" src="{% static "/images/social_media/deviantart.png" %}"></a>
+            <a href="https://twitter.com/vlikewiktoria"><img class="sm_img" src="{% static "/images/social_media/twitter_allblack.png" %}"></a>
+            <a href="https://vlikewiktoria.tumblr.com/"><img class="sm_img" src="{% static "/images/social_media/tumblr_whiteT.png" %}"></a>
         </div>
     </body>
 </html>
