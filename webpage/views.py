@@ -1,7 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-# Create your views here.
 
 
 def home_page(request):
@@ -11,5 +8,6 @@ def home_page(request):
 def gallery_page(request):
     return render(request, 'gallery.html')
 
+
 def blog_page(request):
-    return render(request, 'blog.html')
+    return render(request, '../blog/templates/blog/post_list.html')

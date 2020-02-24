@@ -26,6 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'vickarious.pythonanywhere.com',
+    'localhost'
 ]
 
 
