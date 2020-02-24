@@ -10,3 +10,6 @@ def home_page(request):
 
 def gallery_page(request):
     return render(request, 'gallery.html')
+
+def blog_page(request):
+    return render(request, 'blog.html')
