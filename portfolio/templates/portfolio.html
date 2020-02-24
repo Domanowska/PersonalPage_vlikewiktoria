@@ -1,31 +1,33 @@
+{% load static %}
+{% load modulo %}
 <html>
     <head>
-        <style>
-            * { box-sizing: border-box; }
-            body { background-color: #e5e6e5; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
-            h1 { color: #8d8e8d; text-align: center;  font-weight:normal; font-size: 35px; margin-top: 5px; }
-            .column { float: left; width: 33.3%; text-align:center; padding: 5px; }
-            img { width: 100%; padding-bottom: 10px;}
-        </style>
-        <title>Gallery</title>
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
     </head>
     <body>
-        <h1>Gallery</h1>
-        {% load static %}
+        <h1>Portfolio</h1>
         <div class="column">
-            <img src="{% static "/images/gallery/whale_withlegs.png" %}">
-            <img src="{% static "/images/gallery/pharah-portrait.png" %}">
-            <img src="{% static "/images/gallery/chicken_pattern.png" %}">
+            {% for piece in pieces %}
+                {% if forloop.counter|modulo:3 == 0 %}
+                    <img src="{% get_media_prefix %}{{ piece.image }}">
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="column">
-            <img src="{% static "/images/gallery/troll.PNG" %}">
-            <img src="{% static "/images/gallery/ace_of_cups.jpg" %}">
-            <img src="{% static "/images/gallery/Aardwolf.PNG" %}">
+            {% for piece in pieces %}
+                {% if forloop.counter|modulo:3 == 1 %}
+                    <img src="{% get_media_prefix %}{{ piece.image }}">
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="column">
-            <img src="{% static "/images/gallery/HolySnake.PNG" %}">
-            <img src="{% static "/images/gallery/VI_ofcups.jpg" %}">
-            <img src="{% static "/images/gallery/wloczykij_WIP.jpg" %}">
+            {% for piece in pieces %}
+                {% if forloop.counter|modulo:3 == 2 %}
+                    <img src="{% get_media_prefix %}{{ piece.image }}">
+                {% endif %}
+            {% endfor %}
         </div>
+
     </body>
 </html>

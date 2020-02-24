@@ -6,7 +6,7 @@ from django.utils import timezone
 class Piece(models.Model):
     artist = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    image = None
+    image = models.ImageField(upload_to="portfolio_pieces/", default="portfolio_pieces/wloczykij_WIP.jpg")
     medium = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
