@@ -4,5 +4,5 @@ from .models import Piece
 
 
 def post_list(request):
-    pieces = Piece.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    pieces = Piece.objects.filter(published_date__lte=timezone.now()).order_by('-created_date')
     return render(request, 'portfolio.html', {'pieces': pieces})
