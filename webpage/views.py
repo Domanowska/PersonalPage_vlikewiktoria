@@ -5,8 +5,8 @@ def home_page(request):
     return render(request, 'home.html')
 
 
-def gallery_page(request):
-    return render(request, 'gallery.html')
+def portfolio_page(request):
+    return render(request, '../portfolio/templates/portfolio.html')
 
 
 def blog_page(request):

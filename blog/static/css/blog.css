@@ -1,0 +1,12 @@
+body {
+    background-color: #e5e6e5;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+h1 {
+    color: #8d8e8d;
+    text-align: center;
+    font-weight:normal;
+    font-size: 35px;
+    margin-top: 5px;
+}
