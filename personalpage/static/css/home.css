@@ -61,6 +61,16 @@ a {
     display: block;
 }
 
+.external_link_img {
+    visibility: hidden;
+    margin: 0;
+    position: absolute;
+}
+
+.external_link:hover .external_link_img {
+    visibility: visible;
+}
+
 .sm_links {
     margin-top: 5%;
     text-align: center;
