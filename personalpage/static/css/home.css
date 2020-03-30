@@ -8,24 +8,30 @@ img {
     margin-left: auto;
     margin-top: 150px;
     margin-right: auto;
-    width: 400px;
+    width: 450px;
 }
 
 h1 {
     color: #8d8e8d;
     text-align: center;
-    font-size: 60px;
+    font-size: 65px;
     margin-top: 5px;
 }
 
 a {
+    color: #8d8e8d;
     font-size: 30px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2966a3;
     text-decoration: none;
 }
 
 #navigation {
     margin: auto;
-    width: 600px;
+    width: 450px;
     text-align: center;
 }
 
@@ -37,11 +43,11 @@ a {
 }
 .dropdown button {
     background-color: #ffffff;
-    color: #1c4757;
-    font-size: 30px;
+    color: #8d8e8d;
+    font-size: 35px;
     font-family: 'Amatic SC', cursive;
     margin: auto;
-    width: 225px;
+    width: 220px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -53,7 +59,7 @@ a {
     position: absolute;
     background-color: #ffffff;
     margin: auto;
-    width: 225px;
+    width: 220px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -72,7 +78,6 @@ a {
 }
 
 .sm_links {
-    margin-top: 5%;
     text-align: center;
 }
 .sm_img {
