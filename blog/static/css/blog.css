@@ -25,6 +25,20 @@ h1, h2, h3, h4 {
     color: #8d8e8d;
 }
 
+h2 {
+    font-size: 50px;
+}
+
+h2 a {
+    color: #8d8e8d;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    color: #42548a;
+    text-decoration: none;
+}
+
 .date {
     color: #828282;
 }
@@ -44,11 +58,17 @@ h1, h2, h3, h4 {
     margin-right: 20px;
 }
 
-.post {
+.latest-post {
     margin-bottom: 70px;
 }
 
-.post h2 a, .post h2 a:visited {
-    color: #000000;
-    text-decoration: none;
+.more-posts {
+    float: left;
+    position: inline;
+    width: 25%;
+    margin-right: 25px;
+}
+
+.more-posts h2 {
+    font-size: 35px;
 }
