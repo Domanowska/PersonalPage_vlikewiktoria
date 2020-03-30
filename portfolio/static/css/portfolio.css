@@ -3,16 +3,26 @@
 }
 
 body {
-    background-color: #e5e6e5;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h1 {
+.page-header {
+    background-color: #e5e6e5;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    font-size: 50pt;
+    font-weight: bold;
     color: #8d8e8d;
+    text-decoration: none;
     text-align: center;
-    font-weight: normal;
-    font-size: 35px;
-    margin-top: 5px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Amatic SC', cursive;
+    color: #8d8e8d;
 }
 
 .column {

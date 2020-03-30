@@ -6,7 +6,7 @@ def home_page(request):
 
 
 def portfolio_page(request):
-    return render(request, '../portfolio/templates/portfolio.html')
+    return render(request, '../portfolio/templates/portfolio/art_pieces.html')
 
 
 def blog_page(request):

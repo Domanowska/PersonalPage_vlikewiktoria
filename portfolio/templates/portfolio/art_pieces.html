@@ -1,0 +1,27 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load modulo %}
+
+{% block artpieces %}
+    <div class="column">
+        {% for piece in pieces %}
+            {% if forloop.counter|modulo:3 == 1 %}
+                <img src="{% get_media_prefix %}{{ piece.image }}">
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="column">
+        {% for piece in pieces %}
+            {% if forloop.counter|modulo:3 == 2 %}
+                <img src="{% get_media_prefix %}{{ piece.image }}">
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="column">
+        {% for piece in pieces %}
+            {% if forloop.counter|modulo:3 == 0 %}
+                <img src="{% get_media_prefix %}{{ piece.image }}">
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

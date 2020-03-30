@@ -31,7 +31,7 @@ class HomePageTest(TestCase):
 
     def test_portfolio_page_returns_correct_html(self):
         response = self.client.get('/portfolio/')
-        self.assertTemplateUsed(response, '../portfolio/templates/portfolio.html')
+        self.assertTemplateUsed(response, '../portfolio/templates/portfolio/art_pieces.html')
 
 
 
