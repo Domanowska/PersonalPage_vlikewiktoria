@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="showcase-post">
+        <h2>{{ post.title }}</h2>
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    <hr>
+    {% for another in the_rest %}
+        <div class="more-posts">
+            <div class="date">
+                <p>{{ another.published_date| date:"M. d, Y" }}</p>
+            </div>
+            <h2><a href="{% url 'post_detail' pk=another.pk %}">{{ another.title }}</a></h2>
+            <p>{{ another.text|truncatewords:30 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
