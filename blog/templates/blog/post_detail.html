@@ -14,7 +14,7 @@
     {% for another in the_rest %}
         <div class="more-posts">
             <div class="date">
-                <p>{{ another.published_date| date:"M. d, Y" }}</p>
+                <p>{{ another.published_date| date:"F d, Y" }}</p>
             </div>
             <h2><a href="{% url 'post_detail' pk=another.pk %}">{{ another.title }}</a></h2>
             <p>{{ another.text|truncatewords:30 }}</p>

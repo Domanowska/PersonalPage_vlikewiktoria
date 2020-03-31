@@ -6,21 +6,21 @@
     <div class="column">
         {% for piece in pieces %}
             {% if forloop.counter|modulo:3 == 1 %}
-                <img src="{% get_media_prefix %}{{ piece.image }}">
+                <a href="{% url 'piece_detail' pk=piece.pk %}"><img src="{% get_media_prefix %}{{ piece.image }}"></a>
             {% endif %}
         {% endfor %}
     </div>
     <div class="column">
         {% for piece in pieces %}
             {% if forloop.counter|modulo:3 == 2 %}
-                <img src="{% get_media_prefix %}{{ piece.image }}">
+                <a href="{% url 'piece_detail' pk=piece.pk %}"><img src="{% get_media_prefix %}{{ piece.image }}"></a>
             {% endif %}
         {% endfor %}
     </div>
     <div class="column">
         {% for piece in pieces %}
             {% if forloop.counter|modulo:3 == 0 %}
-                <img src="{% get_media_prefix %}{{ piece.image }}">
+                <a href="{% url 'piece_detail' pk=piece.pk %}"><img src="{% get_media_prefix %}{{ piece.image }}"></a>
             {% endif %}
         {% endfor %}
     </div>

@@ -25,6 +25,18 @@ h1, h2, h3, h4 {
     color: #8d8e8d;
 }
 
+a {
+    font-family: 'Amatic SC', cursive;
+    color: #8d8e8d;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+a:hover {
+    color: #42548a;
+    text-decoration: none;
+}
+
 .column {
     float: left;
     width: 33.3%;
@@ -33,6 +45,40 @@ h1, h2, h3, h4 {
 }
 
 img {
-width: 100%;
-padding-bottom: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.showcase_img {
+    overflow: auto;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.showcase_img img {
+    width: 750px;
+    padding-bottom: 0;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showcase_img .detail {
+    text-align: left;
+    color: #828282;
+    display: inline-block;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    vertical-align: top;
+}
+
+.showcase_img h2 {
+    font-size: 40px;
+}
+
+.back {
+    bottom: 0px;
+    text-align: center;
 }
