@@ -99,4 +99,10 @@ img {
 .back {
     bottom: 0px;
     text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+}
+
+.back a {
+    text-decoration: none;
 }
