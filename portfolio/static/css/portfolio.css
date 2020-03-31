@@ -25,7 +25,7 @@ h1, h2, h3, h4 {
     color: #8d8e8d;
 }
 
-a {
+a h1 {
     font-family: 'Amatic SC', cursive;
     color: #8d8e8d;
     text-decoration: none;
@@ -47,6 +47,24 @@ a:hover {
 img {
     width: 100%;
     padding-bottom: 10px;
+}
+
+.art_piece {
+    position: relative;
+}
+
+.hover_detail {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    opacity: 0.8;
+    padding-top: 20%;
+}
+
+.art_piece:hover .hover_detail {
+    visibility: visible;
 }
 
 .showcase_img {
