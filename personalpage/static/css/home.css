@@ -90,3 +90,8 @@ a:hover {
     height: 30px;
     width: 30px;
 }
+
+footer {
+    text-align: center;
+    font-size: 23px;
+}
