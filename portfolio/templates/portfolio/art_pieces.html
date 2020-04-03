@@ -13,7 +13,7 @@
                             <p>{{ piece.medium }}</p>
                             <p>{{ piece.created_date| date:"F d, Y" }}</p>
                         </div>
-                        <img src="{% get_media_prefix %}{{ piece.image }}">
+                        <img src="{% get_media_prefix %}{{ piece.image }}" loading="lazy">
                     </a>
                 </div>
             {% endif %}
@@ -29,7 +29,7 @@
                             <p>{{ piece.medium }}</p>
                             <p>{{ piece.created_date| date:"F d, Y" }}</p>
                         </div>
-                        <img src="{% get_media_prefix %}{{ piece.image }}">
+                        <img src="{% get_media_prefix %}{{ piece.image }}" loading="lazy">
                     </a>
                 </div>
             {% endif %}
@@ -45,7 +45,7 @@
                             <p>{{ piece.medium }}</p>
                             <p>{{ piece.created_date| date:"F d, Y" }}</p>
                         </div>
-                        <img src="{% get_media_prefix %}{{ piece.image }}">
+                        <img src="{% get_media_prefix %}{{ piece.image }}" loading="lazy">
                     </a>
                 </div>
             {% endif %}
